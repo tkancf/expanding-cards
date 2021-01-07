@@ -12,37 +12,54 @@
 </svelte:head>
 
 <style>
+  * {
+    box-sizing: border-box;
+  }
+
   body {
+    display: flex;
     height: 100vh;
     align-items: center;
     justify-content: center;
-    margin: 0;
+    height: 100vh;
     overflow: hidden;
+    margin: 0;
   }
 
   .container {
-    background-color: pink;
     display: flex;
-    height: 100vw;
+    width: 90vw;
   }
 
   .image{
-    background-color: powderblue;
-    margin: 0;
+    widows: 90vh;
+    background-color: red;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 5px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .image.active {
     flex: 5;
   }
 
   img {
-    height: 400px;
+    width: 50vh;
   }
 
-  .image.active {
-    flex: 0.5;
-  }
+  @media (max-width: 480px) {
+    .container {
+      width: 100vw;
+    }
 
+    .image:nth-of-type(4),
+    .image:nth-of-type(5) {
+      display: none;
+    }
+  }
 </style>
-
-<h1>expanding-cards</h1>
 
 <body>
   <div class="container">
