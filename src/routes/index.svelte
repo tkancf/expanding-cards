@@ -7,17 +7,59 @@
 </script>
 
 
-<style>
-</style>
-
 <svelte:head>
-	<title>expanding-cards</title>
+  <title>expanding-cards</title>
 </svelte:head>
+
+<style>
+  body {
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .container {
+    background-color: pink;
+    display: flex;
+    height: 100vw;
+  }
+
+  .image{
+    background-color: powderblue;
+    margin: 0;
+    flex: 5;
+  }
+
+  img {
+    height: 400px;
+  }
+
+  .image.active {
+    flex: 0.5;
+  }
+
+</style>
 
 <h1>expanding-cards</h1>
 
-<img alt="img1" src={img1}>
-<img alt="img2" src={img2}>
-<img alt="img3" src={img3}>
-<img alt="img4" src={img4}>
-<img alt="img5" src={img5}>
+<body>
+  <div class="container">
+    <div class="image active">
+      <img alt="img1" src={img1}>
+    </div>
+    <div class="image">
+      <img alt="img2" src={img2}>
+    </div>
+    <div class="image">
+      <img alt="img3" src={img3}>
+    </div>
+    <div class="image">
+      <img alt="img4" src={img4}>
+    </div>
+    <div class="image">
+      <img alt="img5" src={img5}>
+    </div>
+  </div>
+</body>
