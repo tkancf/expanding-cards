@@ -19,10 +19,10 @@ jobs:
       - name: Build Sapper
         uses: truewebartisans/actions-sapper@master
         with:
-          args: "--legacy --basepath exporting-cards"
+          args: "--legacy --basepath expanding-cards"
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          publish_dir: __sapper__/export/
+          publish_dir: __sapper__/export/expanding-cards
           publish_branch: gh-pages
           github_token: ${{ secrets.GITHUB_TOKEN }}

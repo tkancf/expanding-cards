@@ -48,7 +48,6 @@
 
   .image {
     widows: 90vh;
-    background-color: red;
     cursor: pointer;
     flex: 0.5;
     margin: 5px;
