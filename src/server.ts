@@ -8,6 +8,7 @@ const dev = NODE_ENV === 'development';
 
 polka() // You can also use Express
 	.use(
+    '/expanding-cards',
 		compression({ threshold: 0 }),
 		sirv('static', { dev }),
 		sapper.middleware()
@@ -15,3 +16,4 @@ polka() // You can also use Express
 	.listen(PORT, err => {
 		if (err) console.log('error', err);
 	});
+
