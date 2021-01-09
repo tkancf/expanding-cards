@@ -2,7 +2,7 @@
 
 .PHONY: deploy
 deploy: ## deploy && amend
-	git add . && git commit --amend -m "Update" && git push -f
+	git add . && git commit -m "Update" && git push -f
 
 .PHONY: help
 help: ## Display this help screen
