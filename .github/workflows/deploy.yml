@@ -1,0 +1,26 @@
+name: deploy
+
+# 新しいコミットがリポジトリにプッシュされるたびにこのワークフローを実行する
+on: push
+
+jobs:
+  # ジョブキーを設定する。 ジョブ名が指定されていない場合、
+  # キーはジョブ名として表示される
+  build_deploy:
+    # ジョブ名を付ける
+    name: Build sapper app
+
+    # 実行するマシンのタイプを設定する
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@master
+      - name: Build Sapper
+        uses: truewebartisans/actions-sapper@master
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@master
+        with:
+          publish_dir: __sapper__/export
+          publis_branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
